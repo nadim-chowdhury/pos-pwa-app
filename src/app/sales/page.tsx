@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import { usePosStore } from "@/stores/posStore";
 import { format } from "date-fns";
 
-interface Sale {
+export interface Sale {
   id: number;
   items: Array<{
     id: number;

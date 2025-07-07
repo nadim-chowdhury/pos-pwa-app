@@ -1,8 +1,9 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { cloudSyncService } from "../services/cloudSync";
+import { Sale } from "@/app/sales/page";
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
   price: number;
@@ -13,13 +14,13 @@ interface CartItem extends Product {
   quantity: number;
 }
 
-interface Sale {
-  id: number;
-  items: CartItem[];
-  total: number;
-  paymentMethod: string;
-  timestamp: string;
-}
+// interface Sale {
+//   id: number;
+//   items: CartItem[];
+//   total: number;
+//   paymentMethod: string;
+//   timestamp: string;
+// }
 
 interface PosStore {
   products: Product[];

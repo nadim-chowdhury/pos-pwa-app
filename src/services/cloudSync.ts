@@ -1,6 +1,9 @@
+import type { Sale } from "@/app/sales/page"; // or wherever Sale is defined
+import type { Product } from "@/stores/posStore"; // or wherever Product is defined
+
 interface SyncData {
-  sales: any[];
-  products: any[];
+  sales: Sale[];
+  products: Product[];
   lastSync: string;
 }
 
@@ -84,7 +87,7 @@ class CloudSyncService {
     }
   }
 
-  public async syncSales(sales: any[]): Promise<void> {
+  public async syncSales(sales: Sale[]): Promise<void> {
     const syncData: SyncData = {
       sales,
       products: [],
@@ -102,7 +105,7 @@ class CloudSyncService {
     }
   }
 
-  public async syncProducts(products: any[]): Promise<void> {
+  public async syncProducts(products: Product[]): Promise<void> {
     const syncData: SyncData = {
       sales: [],
       products,
